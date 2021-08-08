@@ -90,26 +90,73 @@ import UIKit
 //например можно поставить это слово перед методом и этот метод нельзя будет переопределить. так же можно запретить наследоваться от класса
 
 //вычисляемые свойства
-class Human{
-    var name: String
-    var secondName: String
-    var fullName: String{
-        get{
-        return name + " " + secondName
-        }
-        set(anotherNewValue){
-            let array = anotherNewValue.components(separatedBy: " ")
-            name = array[0]
-            secondName = array[1]
-        }
-    }
-    init(name: String, secondName: String) {
-        self.name = name
-        self.secondName = secondName
-    }
-}
-var human1 = Human(name: "Ivan", secondName: "Ivanov")
-human1.fullName
-human1.fullName = "Zinaida Petrova"
-human1.name
-human1.secondName
+//class Human{
+//    var name: String
+//    var secondName: String
+//    var fullName: String{
+//        get{
+//        return name + " " + secondName
+//        }
+//        set(anotherNewValue){
+//            let array = anotherNewValue.components(separatedBy: " ")
+//            name = array[0]
+//            secondName = array[1]
+//        }
+//    }
+//    init(name: String, secondName: String) {
+//        self.name = name
+//        self.secondName = secondName
+//    }
+//}
+//var human1 = Human(name: "Ivan", secondName: "Ivanov")
+//human1.fullName
+//human1.fullName = "Zinaida Petrova"
+//human1.name
+//human1.secondName
+//свойства классов
+//class Car{
+//    let products: Int
+//    let people: Int
+//    let pets: Int
+//    class var selfWeight: Int {return 1500}
+//    class var maxWeight: Int {return 2000}
+//    var totalWeight: Int {
+//        return products + people + pets + Car.selfWeight
+//    }
+//    init(products: Int, people: Int, pets: Int){
+//        self.products = products
+//        self.people = people
+//        self.pets = pets
+//    }
+//}
+//
+//let car1 = Car(products: 10, people: 200, pets: 4)
+//car1.totalWeight
+//наблюдатели свойства
+//ленивые свойства - аналог интерфейса, свойство инициализируется nil пока мы к нему не обратимся
+//func someFunc()->Int{
+//    return 2
+//}
+//class SecretLabEmployee{
+//    lazy var somevar = someFunc()
+//    var accessLevel = 0 {
+//        willSet(newValue){
+//            print("new access level is \(newValue)")
+//        }
+//        didSet(oldValue){
+//            if accessLevel > 0{
+//                accessToDB = true
+//            } else {
+//                accessToDB = false
+//            }
+//            print("old access level is \(oldValue)")
+//        }
+//    }
+//    var accessToDB = false
+//}
+//var employee = SecretLabEmployee()
+//employee.accessLevel = 1
+//employee.somevar
+//employee
+//уровни доступа
+
